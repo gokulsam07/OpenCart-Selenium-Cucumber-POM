@@ -15,5 +15,6 @@ Feature: Global search feature
 
   Scenario: Search with no product
     Given user opens the application
+    When user enters "" in the search field
     And user clicks on the search button
     Then relevant error should be displayed

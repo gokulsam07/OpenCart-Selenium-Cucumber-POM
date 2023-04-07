@@ -10,7 +10,7 @@ Feature: Login feature
 
   Scenario: Login with invalid username and valid pasword
     Given user navigates to login page
-    When user enters the username "gokul2381@gmail.com"
+    When user enters the invalid username 
     And user enters the password "Gokul@123"
     And click login button
     Then user should get a proper warning message
