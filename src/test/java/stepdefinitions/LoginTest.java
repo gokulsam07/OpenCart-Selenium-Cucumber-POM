@@ -56,6 +56,7 @@ public class LoginTest {
 	@Then("^user should get a proper warning message$")
 	public void user_should_get_a_proper_warning_message()   {
 		Assert.assertEquals(true, loginPage.isErrorDisplayedForWrongCreds());
+		Assert.fail();
 
 	}
 
