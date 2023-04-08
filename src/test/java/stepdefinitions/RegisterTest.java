@@ -18,14 +18,15 @@ import utilities.CommonUtils;
 
 public class RegisterTest {
 	public WebDriver driver;
-	RegisterPage registerPage;
+	private RegisterPage registerPage;
+
 
 	@Given("^user navigates to register page$")
 	public void user_navigates_to_register_page()  {
 		driver = DriverFactory.getDriver();
 		HomePage homePage = new HomePage(driver);
 		homePage.ClickOnMyAccount();
-		 registerPage = homePage.ClickOnRegister();
+		registerPage = homePage.ClickOnRegister();
 
 	}
 

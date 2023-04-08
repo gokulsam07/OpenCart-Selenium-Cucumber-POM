@@ -14,8 +14,8 @@ import utilities.CommonUtils;
 
 public class LoginTest {
 	public WebDriver driver;
-	LoginPage loginPage;
-	AccountPage accountPage;
+	private LoginPage loginPage;
+	private AccountPage accountPage;
 
 	@Given("^user navigates to login page$")
 	public void user_navigates_to_login_page()   {
@@ -30,7 +30,7 @@ public class LoginTest {
 	public void user_enters_the_username(String username){
 		loginPage.enterUsername(username);;
 	}
-	
+
 	@When("user enters the invalid username")
 	public void user_enters_the_invalid_username()   {
 		loginPage.enterUsername(CommonUtils.getNewEmail());

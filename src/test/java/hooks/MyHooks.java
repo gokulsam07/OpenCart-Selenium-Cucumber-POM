@@ -1,6 +1,6 @@
 package hooks;
 
-import java.time.Duration;
+
 import java.util.Properties;
 
 import org.openqa.selenium.WebDriver;
@@ -12,16 +12,14 @@ import utilities.ConfigReader;
 public class MyHooks {
 
 	public WebDriver driver;
-
+	private ConfigReader configReader;
+	private Properties prop;
 
 	@Before
 	public void setUp() {
-		Properties prop = ConfigReader.initializePrpoerties();
-		DriverFactory.initializeDriver(prop.getProperty("browserName"));
-		driver = DriverFactory.getDriver();
-		driver.manage().deleteAllCookies();
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-		driver.manage().window().maximize();
+		configReader = new ConfigReader();
+		prop = configReader.initializePrpoerties();
+		driver =DriverFactory.initializeDriver(prop.getProperty("browserName"));
 		driver.get(prop.getProperty("url"));
 	}
 

@@ -12,12 +12,14 @@ import pageobjects.SearchPage;
 
 public class GlobalSearchTest {
 	public WebDriver driver;
-	HomePage homePage;
-	SearchPage searchPage;
+	private HomePage homePage;
+	private SearchPage searchPage;
+
 
 	@Given("^user opens the application$")
 	public void user_opens_the_application() {
 		driver = DriverFactory.getDriver();
+		
 	}
 
 	@When("user enters {string} in the search field")
